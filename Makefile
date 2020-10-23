@@ -1,5 +1,5 @@
-CFLAGS=-Wall -Werror -std=c11 -pedantic -ggdb
+CXXFLAGS=-Wall -Werror -std=c++17 -pedantic -ggdb
 LIBS=
 
-de3df: main.c
-	$(CC) $(CFLAGS) -o de3df main.c $(LIBS)
+de3df: main.cpp
+	$(CXX) $(CXXFLAGS) -o de3df main.cpp $(LIBS)
