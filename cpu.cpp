@@ -169,22 +169,9 @@ int main(int argc, char *argv[])
 {
     render_to_file("output.png", [] (vec3 p) {
         return fmin(
-            length(p - vec3(-10.0f * 0, 0.0f, EYE_DISTANCE + R)) - R,
-            length(p - vec3( 10.0f * 0, 0.0f, EYE_DISTANCE + R)) - R);
+            length(p - vec3(-200.0f, 0.0f, EYE_DISTANCE + R)) - R,
+            length(p - vec3( 200.0f, 0.0f, EYE_DISTANCE + R)) - R);
     });
-
-#if 0
-    for (int i = 0; i < 20; ++i) {
-        char filepath[256];
-        snprintf(filepath, sizeof(filepath), "out/output-%02d.png", i);
-        printf("Rendering %s\n", filepath);
-        render_to_file(filepath, [&i] (vec3 p) {
-            return fmin(
-                length(p - vec3(-10.0f * i, 0.0f, EYE_DISTANCE + R)) - R,
-                length(p - vec3( 10.0f * i, 0.0f, EYE_DISTANCE + R)) - R);
-        });
-    }
-#endif
 
     return 0;
 }
